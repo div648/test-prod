@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Калькулятор Four</title>
+    <meta name="keywords" content="Калькулятор, Онлайн калькулятор, калькулятор систем счисления">
+    <meta meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="app/app.css">
+    <script src="QCCore.js"></script>
+    <script src="QCLib.js"></script>
+    <script src="QCMath.js"></script>
+    <script src="app/functions.js"></script>
+    <script src="app/app.js"></script>
+
+
+</head>
+
+<body class="body-back">
+
+
+    <div class="toper">
+
+        <img src="icons/cal0.png" class="img-icons" onclick="exeNowCalc = 0">
+        <img src="icons/cal1.png" class="img-icons" onclick="exeNowCalc = 1">
+        <img src="icons/cal2.png" class="img-icons" onclick="exeNowCalc = 2">
+        <img src="icons/cal8.png" class="img-icons" onclick="exeNowCalc = 3">
+        <img src="icons/cal9.png" class="img-icons" onclick="exeNowCalc = 5">
+        <img src="icons/cal5.png" class="img-icons" onclick="exeNowCalc = 4">
+
+
+    </div>
+    <p class="vTitle">Calculator v4 SOQC Core</p>
+    <div class="hello" id="hell"></div>
+
+
+    <div class="disNone" id="cal0">
+
+
+        <div class="center">
+            <div class="cal-trans-si" id="cal-trans-si">
+
+                <button class="button-st" onclick="switchModefc0()">Калькулятор</button><br>
+
+                <input type="text" class="input-text" placeholder="Введите число" id="cal0-in0-trans">
+
+                <select class="input-text-select" id="cal0-in1-trans">
+
+                    <option value="2" selected style="color: #000;">2</option>
+                    <option value="4">4</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+
+
+
+
+                </select><br>
+
+                <select class="input-text-select" id="cal0-in2-trans">
+
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                    <option value="10" selected>10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+
+
+
+
+                </select><br>
+
+                <p class="answer-text" id="cal0-out0">Ответ: </p>
+
+
+                <img src="icons/but_a.png" class="img-button" onclick="insertAtCaret('cal0-in0-trans', 'A')">
+                <img src="icons/but_b.png" class="img-button" onclick="insertAtCaret('cal0-in0-trans', 'B')">
+                <img src="icons/but_c.png" class="img-button" onclick="insertAtCaret('cal0-in0-trans', 'C')">
+                <br>
+                <img src="icons/but_d.png" class="img-button" onclick="insertAtCaret('cal0-in0-trans', 'D')">
+                <img src="icons/but_e.png" class="img-button" onclick="insertAtCaret('cal0-in0-trans', 'E')">
+                <img src="icons/but_f.png" class="img-button" onclick="insertAtCaret('cal0-in0-trans', 'F')">
+
+            </div>
+
+            <div class="cal-cal-si" id="cal-cal-si">
+
+                <button class="button-st" onclick="switchModefc0()">Переводчик</button><br>
+
+                <input type="text" class="input-text" placeholder="Введите число" id="cal0-in0-cal">
+
+                <select class="input-text-select" id="cal0-in1-cal">
+
+                    <option value="2" selected>2</option>
+                    <option value="4">4</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+
+
+
+                </select><br>
+
+                <select class="input-text-select" id="cal0-in2-cal">
+
+                    <option value="+" selected>+</option>
+                    <option value="-">-</option>
+                    <option value="*">x</option>
+                    <option value="/">÷</option>
+
+
+                </select><br>
+
+                <input type="text" class="input-text" placeholder="Введите число" id="cal0-in3-cal">
+
+                <select class="input-text-select" id="cal0-in4-cal">
+
+                    <option value="2" selected>2</option>
+                    <option value="4">4</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+
+
+                </select><br>
+
+                <select class="input-text-select" id="cal0-in5-cal">
+
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                    <option value="10" selected>10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+
+
+                </select><br>
+
+                <p class="answer-text" id="cal0-out1">Ответ: </p>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+    <div class="disNone" id="cal1">
+        <div class="center">
+            <br><br>
+            <select id="cal1-in0-cal" class="input-text-select-modes">
+
+                <option value="0">Сколько составляет % от числа</option>
+                <option value="1">Сколько % составляет число от числа</option>
+                <option value="2">К числу прибавить %</option>
+                <option value="3">От числа отнять %</option>
+                <option value="4">Число умножить на %</option>
+                <option value="5">Число поделить на %</option>
+
+            </select>
+            <p id="cal1-out0" class="title-text">Сколько составляет</p>
+            <input type="number" class="input-text" id="cal1-in1-cal">
+            <p id="cal1-out1" class="title-text">% от числа</p>
+            <input type="number" class="input-text" id="cal1-in2-cal">
+            <p id="cal1-out2" class="title-text"></p>
+            <p class="title-text">Сколько знаков после точки</p><br>
+            <select id="cal1-in3-cal" class="input-text-select">
+
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+
+            </select>
+            <p id="cal1-out3" class="answer-text">Ответ</p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="disNone" id="cal2">
+
+        <div class="center">
+            <br><br>
+            <p class="title-text">U - Напряжение(V)</p>
+            <input type="number" class="input-text" id="cal2-in0-cal">
+            <p class="title-text">I - Сила тока(A)</p>
+            <input type="number" class="input-text" id="cal2-in1-cal">
+            <p class="title-text">P - Мощность(W)</p>
+            <input type="number" class="input-text" id="cal2-in2-cal">
+            <p class="title-text">R - Сопротивление(Om)</p>
+            <input type="number" class="input-text" id="cal2-in3-cal">
+            <p class="answer-text" id="cal2-out0"></p>
+            <p class="answer-text" id="cal2-out1"></p>
+            <p class="answer-text" id="cal2-out2"></p>
+            <p class="answer-text" id="cal2-out3"></p>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <div class="disNone" id="cal3">
+        <div class="center">
+            <br><br>
+            <div id="input-r-data">
+
+            </div>
+            <button class="button-calculate" onclick="addNewInputCal3()">Добавить резистор</button>
+            <p class="answer-text" id="cal3-out0">Ответ: </p>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="disNone" id="cal4">
+
+        <div class="center">
+            <br><br>
+            <input type="text" class="input-text" id="cal4-in0-cal">
+            <p class="answer-text" id="cal4-out0">Ответ:</p>
+
+        </div>
+
+    </div>
+
+    <div class="disNone" id="cal5">
+
+        <div class="center">
+            <br><br>
+            <div id="input-n-data">
+
+            </div>
+            <button class="button-calculate" onclick="addNewInputCal5()">Добавить число</button>
+            <p class="answer-text" id="cal5-out0">Ответ: </p>
+
+        </div>
+
+    </div>
+
+    <div class="disNone" id="debagDiv">
+        <textarea  id="db-in0" cols="30" rows="10" style="margin: 20px;"></textarea><br>
+        <button onclick="powdbf()" style="padding: 5px; margin: 0 20px">Enter</button>
+    </div>
+
+
+    <script>/*
+    if (localStorage.modeCalculator != undefined) {
+        eval('cal' + localStorage.modeCalculator + '()');
+
+    }*/
+    </script>
+</body>
+
+</html>
