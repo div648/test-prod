@@ -4,6 +4,7 @@ function numSi(num, of, to) {
     to = Number(to);
 
     if (of == 10) {
+        num = Number(num);
         res = num.toString(to);  // Из 10 ой
         return res;
     } else if (to == 10) {
